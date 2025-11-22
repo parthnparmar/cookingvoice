@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - cookingwithvoice</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cooking-app.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cooking-app2.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cooking-app3.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/recipe-actions.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/cookingwithvoice.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

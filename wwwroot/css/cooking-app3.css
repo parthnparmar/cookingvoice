@@ -1,0 +1,159 @@
+.recipe-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.nav-btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: var(--secondary-gradient);
+  transform: translateY(-2px);
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  background: rgba(67, 233, 123, 0.1);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #43e97b;
+}
+
+.instructions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.step-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  background: var(--success-gradient);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-btn {
+  background: var(--secondary-gradient);
+  width: 60px;
+  height: 60px;
+}
+
+.current-instruction {
+  background: rgba(240, 147, 251, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  border-left: 4px solid #f093fb;
+}
+
+.progress-bar {
+  background: rgba(0, 0, 0, 0.1);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--secondary-gradient);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.saved-section {
+  text-align: center;
+}
+
+.saved-toggle {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.saved-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.saved-recipes {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.completion-message {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  animation: celebration 2s ease-in-out;
+}
+
+@keyframes celebration {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .recipe-header {
+    flex-direction: column;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .recipe-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .recipe-nav {
+    flex-direction: column;
+  }
+}

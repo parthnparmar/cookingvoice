@@ -1,0 +1,30 @@
+.recipe-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.save-btn, .delete-btn {
+  background: var(--success-gradient);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.delete-btn {
+  background: var(--secondary-gradient);
+}
+
+.save-btn:hover, .delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}

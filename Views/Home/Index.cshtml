@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Voice Cooking Assistant";
+}
+
+<div class="cooking-app">
+    <!-- Header -->
+    <div class="app-header">
+        <h1 class="app-title">🍳 CookingVoice</h1>
+        <p class="app-subtitle">Your AI-Powered Kitchen Assistant</p>
+    </div>
+
+    <!-- Voice Control Section -->
+    <div class="voice-section">
+        <div class="voice-control">
+            <button id="startStopBtn" class="voice-btn">
+                <span id="btnIcon" class="voice-icon">🎤</span>
+                <span id="btnText">Tap to Speak</span>
+            </button>
+            <div id="status" class="status-text">Say "Find pasta recipe" or "Cook chicken curry" to start cooking!</div>
+            
+            <!-- Text Input Fallback -->
+            <div class="text-input-section">
+                <input type="text" id="textCommand" placeholder="Or type your command here..." />
+                <button id="textSubmit" class="text-btn">Send</button>
+            </div>
+        </div>
+        
+        <div id="timerDisplay" class="timer-display" style="display: none;">
+            <div class="timer-icon">⏰</div>
+            <div class="timer-value" id="timerValue">00:00</div>
+        </div>
+    </div>
+
+    <!-- Recipe Search Results -->
+    <div id="searchResults" class="search-results" style="display: none;">
+        <h3 class="section-title">🔍 Recipe Results</h3>
+        <div id="recipeGrid" class="recipe-grid"></div>
+    </div>
+
+    <!-- Current Recipe Display -->
+    <div id="recipeDisplay" class="recipe-display" style="display: none;">
+        <div class="recipe-header">
+            <img id="recipeImage" class="recipe-image" src="" alt="Recipe">
+            <div class="recipe-info">
+                <h2 id="recipeTitle" class="recipe-title"></h2>
+                <p id="recipeDescription" class="recipe-description"></p>
+                <div class="recipe-meta">
+                    <span class="meta-item">⏱️ <span id="prepTime">0</span> min prep</span>
+                    <span class="meta-item">🔥 <span id="cookTime">0</span> min cook</span>
+                    <span class="meta-item">👥 <span id="servings">0</span> servings</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe Navigation -->
+        <div class="recipe-nav">
+            <button class="nav-btn" onclick="showIngredients()">📋 Ingredients</button>
+            <button class="nav-btn active" onclick="showInstructions()">👨‍🍳 Instructions</button>
+            <button class="nav-btn" onclick="saveRecipe()">💾 Save</button>
+        </div>
+
+        <!-- Ingredients Section -->
+        <div id="ingredientsSection" class="recipe-section" style="display: none;">
+            <h3 class="section-title">📋 Ingredients</h3>
+            <ul id="ingredientsList" class="ingredients-list"></ul>
+        </div>
+
+        <!-- Instructions Section -->
+        <div id="instructionsSection" class="recipe-section">
+            <div class="instructions-header">
+                <h3 class="section-title">👨‍🍳 Step <span id="currentStepNumber">1</span></h3>
+                <div class="step-controls">
+                    <button class="control-btn" onclick="previousStep()">⏮️</button>
+                    <button class="control-btn play-btn" onclick="playStep()">▶️</button>
+                    <button class="control-btn" onclick="nextStep()">⏭️</button>
+                </div>
+            </div>
+            <div id="currentInstruction" class="current-instruction"></div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saved Recipes -->
+    <div class="saved-section">
+        <button class="saved-toggle" onclick="toggleSaved()">💾 My Saved Recipes</button>
+        <div id="savedRecipes" class="saved-recipes" style="display: none;"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
